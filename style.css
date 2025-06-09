@@ -1,0 +1,92 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #333;
+    color: gold;
+}
+
+.container > * {
+    border: 2px solid gold;
+    padding: 2rem;
+    /*text-align: center;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 250vh;
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /*grid-template-rows: repeat(4, 1fr);*/
+    /*grid-auto-rows: 250px 150px;*/
+    grid-template-rows: 100px repeat(5, 300px) 150px;
+    gap: 20px;
+    margin: 20px;
+
+    /*justify-content: center;
+    align-content: center;*/
+
+/* VARIANTAS 1 */
+grid-template-areas: "hd hd hd"
+"hero hero hero"
+"s1 s1 s2"
+"s3 s4 s4"
+"s5 s5 s6"
+"promo promo promo"
+"ft ft ft";
+}
+
+header {
+   /* VARIANTAS 2*/
+   grid-column-start: 1;
+   grid-column-end: 4;
+   grid-column-end: -1;
+   grid-column: 1/-1;
+   grid-column: 1/span 3;
+   grid-column-start: span 3;
+
+   grid-row-start: 1;
+   grid-row-end: 2;
+}
+
+header {
+   grid-area: hd;
+}
+
+.hero {
+    grid-area: hero;
+    /*justify-self: center;
+    align-self: center;*/
+}
+.section-1 {
+    grid-area: s1;
+}
+.section-2 {
+    grid-area: s2;
+}
+.section-3 {
+    grid-area: s3;
+}
+.section-4 {
+    grid-area: s4;
+}
+.section-5 {
+    grid-area: s5;
+}
+.section-6 {
+    grid-area: s6;
+}
+.promo {
+    grid-area: promo;
+}
+footer {
+    grid-area: ft;
+}
