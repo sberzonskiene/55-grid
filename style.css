@@ -10,6 +10,7 @@ body {
     font-family: sans-serif;
     background-color: #333;
     color: gold;
+    overflow-x: hidden;
 }
 
 .container > * {
@@ -98,18 +99,21 @@ footer {
 
 header {
     clip-path: polygon(0 0, 100% 0, 100% 80px, 50% 100%, 0 80px);
-    animation: moveDown 1s ease-in;
+    animation: moveDown 500ms ease-in, fastUp 200ms linear 700ms;
 }
 
 .hero {
-    clip-path: polygon(0 0, 50% 20px, 100% 0, 100% 280px, 0 100%); ;
+    clip-path: polygon(0 0, 50% 20px, 100% 0, 100% 280px, 0 100%);
+    animation: dropDown 700ms ease-in;
 }
 
 .section-1 {
     clip-path: polygon(0 20px, 100% 8px, 100% 100%, 0 100%);
+    animation: moveRight 500ms ease-in, fastDown 200ms linear 700ms;
 }
 .section-2 {
     clip-path: polygon(0 7px, 100% 0, 100% 100%, 0 100%);
+    animation: moveLeft 500ms ease-in, fastDown 200ms linear 700ms;
 }
 
 .section-3, 
@@ -132,5 +136,97 @@ footer {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(-20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fastUp {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fastDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* BANGOS EFEKTAS */
+
+.efektui {
+    background-color: rgb(179, 255, 0);
+    width: 3%;
+    height: 3%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    opacity: 0;
+    z-index: -1;
+  /*transform: scaleX(40) scaleY(20);*/
+    animation: scaleUp 500ms ease-out 500ms;
+    
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 1;
+        transform: scaleX(0) scaleY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(40) scaleY(20);
     }
 }
