@@ -238,7 +238,7 @@ footer {
 .card   {
     position: relative;
     perspective: 700px;
-     background-color: transparent;
+    background-color: transparent;
 }
 
 .side {
@@ -262,7 +262,7 @@ footer {
 .back {
     background-color: transparent;
     transform: rotateY(-180deg);
-    background-image: url("./img/2img.jpg");
+    background-image: url("./img/1img.png");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: contain;
