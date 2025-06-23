@@ -9,6 +9,7 @@
 body {
     font-family: sans-serif;
     background-image: url("./img/bird.png");
+    background-size: 100px;
     background-position: center;
     background-attachment: fixed;
     color: gold;
@@ -277,8 +278,33 @@ footer {
 
 /* Frosted Glass */
 
-.section-4 {
+.section-4,
+.section-5 {
     background-color: transparent;
     backdrop-filter: blur(10px) brightness(75%);
     border-radius: 10px;
+}
+
+/* Gražus tekstas */
+
+@font-face {
+    font-family: Sterion;
+    src: url(./Sterion-BLLld.ttf);
+}
+.bg-txt {
+    font-family: Sterion;
+    font-size: 14vw;
+    letter-spacing: 5px;
+    background-image: url(./img/fonas.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    transition: all 200ms;
+}
+
+.bg-txt:hover {
+    transform: skewX(-5deg) rotate(-5deg);
 }
